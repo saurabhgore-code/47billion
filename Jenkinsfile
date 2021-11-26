@@ -1,5 +1,8 @@
 pipeline {
     agent any 
+    environment {
+		DOCKERHUB_CREDENTIALS=credentials('deploy')
+	}
     stages
     { 
         stage('pull image')
