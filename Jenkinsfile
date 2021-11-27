@@ -24,12 +24,9 @@ stage('login dockerhub'){
   }
        stage('Deploy Image') {
           steps{
-            script{
-              
               sh 'docker tag mysql saurabhgore70/mysql:v2'
               sh 'docker push saurabhgore70/mysql:v2'
-            }
-          }
+       }
            }
 
   }
