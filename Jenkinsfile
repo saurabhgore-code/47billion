@@ -5,7 +5,8 @@ pipeline {
 	}
     stages
 	{ stage ('cloning git')
-	 { steps{ 'sh git clone https://github.com/saurabhgore-code/47billion.git'
+	 { steps{ 
+		 'sh git clone https://github.com/saurabhgore-code/47billion.git'
 		}
 	 }
         stage('build image')
