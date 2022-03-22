@@ -12,13 +12,13 @@ pipeline {
         stage('build image')
         {
         steps{ 
-            sh 'docker build -t mysql-image /home/ec2-user/all-dockerfiles'
+            sh 'docker build -t my-apache-image /home/sagore'
         }
         }
-        stage('run mysql image')
+        stage('run apache image')
         {
         steps{
-            sh 'docker run -dt mysql-image'
+            sh 'docker run -dt my-apache-image'
         }
         }
 stage('login dockerhub'){
@@ -28,8 +28,8 @@ stage('login dockerhub'){
   }
        stage('Deploy Image') {
           steps{
-              sh 'docker tag mysql-image saurabhgore70/mysql-image:v2'
-              sh 'docker push saurabhgore70/mysql-image:v2'
+              sh 'docker tag my-apache-image saurabhgore70/my-apache-image:bpl'
+              sh 'docker push saurabhgore70/my-apache-image:bpl'
        }
            }
 
