@@ -4,11 +4,7 @@ pipeline {
 		DOCKERHUB_CREDENTIALS=credentials('deploy')
 	}
     stages
-	{ stage ('cloning git')
-	 { steps{ 
-		 'sh git clone https://github.com/saurabhgore-code/47billion.git'
-		}
-	 }
+	{ 
         stage('build image')
         {
         steps{ 
