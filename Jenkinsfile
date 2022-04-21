@@ -24,8 +24,8 @@ stage('login dockerhub'){
   }
        stage('Deploy Image') {
           steps{
-              sh 'docker tag mysql saurabhgore70/mysql:bpl'
-              sh 'docker push saurabhgore70/mysql:bpl'
+              sh 'docker tag mysql saurabhgore70/mysql:indr'
+              sh 'docker push saurabhgore70/mysql:indr'
        }
            }
 
