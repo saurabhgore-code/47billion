@@ -1,20 +1,20 @@
 pipeline {
-    agent any 
+    agent slave-node 
     environment {
 		DOCKERHUB_CREDENTIALS=credentials('deploy')
 	}
     stages
 	{ 
-        stage('build image')
+        stage('pull image')
         {
         steps{ 
-            sh 'docker build -t my-apache-image /home/sagore'
+            sh 'docker pull nginx'
         }
         }
-        stage('run apache image')
+        stage('run nginx image')
         {
         steps{
-            sh 'docker run -dt my-apache-image'
+            sh 'docker run -dt nginx'
         }
         }
 stage('login dockerhub'){
@@ -24,8 +24,8 @@ stage('login dockerhub'){
   }
        stage('Deploy Image') {
           steps{
-              sh 'docker tag my-apache-image saurabhgore70/my-apache-image:bpl'
-              sh 'docker push saurabhgore70/my-apache-image:bpl'
+              sh 'docker tag nginx saurabhgore70/nginx:bpl'
+              sh 'docker push saurabhgore70/nginx:bpl'
        }
            }
 
