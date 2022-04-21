@@ -8,13 +8,13 @@ pipeline {
         stage('pull image')
         {
         steps{ 
-            sh 'docker pull nginx'
+            sh 'docker pull mysql'
         }
         }
         stage('run nginx image')
         {
         steps{
-            sh 'docker run -dt nginx'
+            sh 'docker run -dt mysql'
         }
         }
 stage('login dockerhub'){
@@ -24,8 +24,8 @@ stage('login dockerhub'){
   }
        stage('Deploy Image') {
           steps{
-              sh 'docker tag nginx saurabhgore70/nginx:bpl'
-              sh 'docker push saurabhgore70/nginx:bpl'
+              sh 'docker tag mysql saurabhgore70/mysql:bpl'
+              sh 'docker push saurabhgore70/mysql:bpl'
        }
            }
 
