@@ -1,5 +1,5 @@
 pipeline {
-    agent label slave-node
+	agent {label 'slave-node'}
     environment {
 		DOCKERHUB_CREDENTIALS=credentials('deploy')
 	}
