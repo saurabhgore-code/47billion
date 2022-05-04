@@ -5,6 +5,12 @@ pipeline {
 	}
     stages
 	{ 
+	stage('clone the repo')
+		{
+			steps{	
+	 sh 'git clone https://github.com/saurabhgore-code/47billion.git'
+			}
+		}
         stage('pull image')
         {
         steps{ 
