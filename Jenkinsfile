@@ -4,7 +4,7 @@ pipeline {
 		DOCKERHUB_CREDENTIALS=credentials('deploy')
 	}
     stages
-	{ 
+	parallel { 
 	stage('clone the repo')
 		{
 			steps{	
