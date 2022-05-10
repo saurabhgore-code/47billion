@@ -4,9 +4,7 @@ pipeline {
 		DOCKERHUB_CREDENTIALS=credentials('deploy')
 	}
     stages
-	{
-	parallel	
-		{ 
+	{	
 	stage('clone the repo')
 		{
 			steps{	
@@ -36,6 +34,5 @@ stage('login dockerhub'){
               sh 'docker push saurabhgore70/mysql:delhi'
        }
            }
-	}
  }
 }
