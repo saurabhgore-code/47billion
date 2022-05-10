@@ -11,10 +11,10 @@ pipeline {
 	 sh 'git clone https://github.com/saurabhgore-code/47billion.git'
 			}
 		}
-        stage('pull image')
+        stage('build image')
         {
         steps{ 
-            sh 'docker pull mysql'
+            sh 'docker build -t mysql-image .'
         }
         }
         stage('run nginx image')
@@ -30,8 +30,8 @@ stage('login dockerhub'){
   }
        stage('Deploy Image') {
           steps{
-              sh 'docker tag mysql saurabhgore70/mysql:indr'
-              sh 'docker push saurabhgore70/mysql:indr'
+              sh 'docker tag mysql saurabhgore70/mysql:delhi'
+              sh 'docker push saurabhgore70/mysql:delhi'
        }
            }
 
