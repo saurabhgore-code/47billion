@@ -17,7 +17,7 @@ pipeline {
             sh 'docker build -t mysql-image .'
         }
         }
-        stage('run nginx image')
+        stage('run mysql image')
         {
         steps{
             sh 'docker run -dt mysql'
@@ -30,8 +30,8 @@ stage('login dockerhub'){
   }
        stage('Deploy Image') {
           steps{
-              sh 'docker tag mysql saurabhgore70/mysql:delhi'
-              sh 'docker push saurabhgore70/mysql:delhi'
+              sh 'docker tag mysql saurabhgore70/mysql:bpl'
+              sh 'docker push saurabhgore70/mysql:bpl'
        }
            }
  }
