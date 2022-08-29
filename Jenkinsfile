@@ -11,7 +11,7 @@ pipeline {
 	 sh 'git clone https://github.com/saurabhgore-code/47billion.git'
 			}
 		}
-        stage('build image')
+        stage('build  mysql image')
         {
         steps{ 
             sh 'docker build -t mysql-image .'
